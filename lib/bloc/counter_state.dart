@@ -21,10 +21,10 @@ class CounterState {
     final bool? isWorking,
   }) => 
       CounterState(
-        isWorking: isWorkin ?? this.isWorking,
-        this.error = '',
-      this.accion = '',
-      this.isWorking = false,
-  )
+        counter: counter ?? this.counter,
+        isWorking: isWorking ?? this.isWorking,
+        error: error ?? this.error,
+        accion: accion ?? this.accion,
+  );
 
 }

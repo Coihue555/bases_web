@@ -16,19 +16,60 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   Future<void> _onGetCounter(OnGetCounter event, Emitter emit) async {
     emit(state.copyWith(
         error: '',
-        counter: 10,
+        counter: CounterModel(counter: 10),
         isWorking: true,
         accion: 'OnGetCounter'));
 
-    
     String error = '';
+    
 
     emit(state.copyWith(
         isWorking: false,
         error: error,
-        lstCarritos: lstCarritos,
-        accion: Environment.blocOnObtieneCarritos));
+        accion: 'OnGetCounter'));
   }
+
+  Future<void> _onIncrement(OnIncrement event, Emitter emit) async {
+    emit(state.copyWith(
+        error: '',
+        counter: CounterModel(counter: 10),
+        isWorking: true,
+        accion: 'OnIncrement'));
+
+    int contador = state.counter.counter+1;
+    String error = '';
+
+    
+
+    emit(state.copyWith(
+        isWorking: false,
+        error: error,
+        counter: CounterModel(counter: contador) ,
+        accion: 'OnIncrement'));
+
+    
+  }
+
+  Future<void> _onDecrement(OnDecrement event, Emitter emit) async {
+    emit(state.copyWith(
+        error: '',
+        counter: CounterModel(counter: 10),
+        isWorking: true,
+        accion: 'OnDecrement'));
+
+    int contador = state.counter.counter-1;
+    String error = '';
+
+    
+
+    emit(state.copyWith(
+        isWorking: false,
+        error: error,
+        counter: CounterModel(counter: contador) ,
+        accion: 'OnDecrement'));
+  }
+    
+  
 
 
 
