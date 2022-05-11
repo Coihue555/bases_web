@@ -1,7 +1,14 @@
-import 'package:bases_web/ui/shared/custom_app_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:bases_web/ui/shared/custom_app_menu.dart';
 
 class MainLayoutPage extends StatelessWidget {
+
+  final Widget child;
+
+  const MainLayoutPage({
+    Key? key, 
+    required this.child
+    }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +16,10 @@ class MainLayoutPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            CustomAppMenu(),
-            Spacer(),
-            //algo
-            Spacer(),
+            const CustomAppMenu(),
+            const Spacer(),
+            Expanded(child: child),
+            const Spacer(),
           ],
         )
       ),
