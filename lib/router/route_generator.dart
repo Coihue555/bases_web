@@ -7,10 +7,10 @@ class RouteGenerator {
 
     switch(settings.name){
       case '/stateful':
-        return _fadeRoute(const CounterView(), '/stateful');
+        return _fadeRoute(const CounterView(base: '5'), '/stateful');
 
       case '/provider':
-        return _fadeRoute(const CounterProviderView(), '/provider');
+        return _fadeRoute( const CounterProviderView(base: '12',), '/provider');
       
       default:
         return _fadeRoute(NoPageView(), '/404');

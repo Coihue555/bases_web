@@ -10,7 +10,7 @@ class CounterProviderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: ( _ ) => CounterProvider(),
+      create: ( _ ) => CounterProvider('12'),
       child: const _CounterProviderBody()
       );
   }
